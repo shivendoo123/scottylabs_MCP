@@ -216,3 +216,17 @@ Expects `Summary: 13/13 passed`.
         ├── server.py        # FastMCP app, tool registrations, entry point
         └── tools.py         # tool implementations (importable for tests)
 ```
+
+## Credits
+
+Huge thanks to **[ScottyLabs](https://scottylabs.org)** — the student
+organization at Carnegie Mellon University that builds and maintains the
+Course Tool ([cmucourses.com](https://www.cmucourses.com),
+[courses.scottylabs.org](https://courses.scottylabs.org)) and its public
+backend API. This MCP server is just a thin Python wrapper around their
+work; all the data, scrapers, and infrastructure that make it useful are
+theirs.
+
+Upstream repo: [github.com/ScottyLabs/cmucourses](https://github.com/ScottyLabs/cmucourses).
+Consider contributing to or supporting them directly.
+
