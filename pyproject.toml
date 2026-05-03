@@ -1,0 +1,64 @@
+[project]
+name = "scottylabs-mcp"
+version = "0.1.0"
+description = "Model Context Protocol server for the ScottyLabs CMU Courses API"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+    { name = "Shivendoo Deshmukh", email = "shivendoo123@gmail.com" },
+]
+keywords = ["mcp", "claude", "cmu", "scottylabs", "courses"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Education",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "mcp>=1.2.0",
+    "httpx>=0.27.0",
+    "pydantic>=2.6.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/shivendoo123/scottylabs_MCP"
+Repository = "https://github.com/shivendoo123/scottylabs_MCP"
+Issues = "https://github.com/shivendoo123/scottylabs_MCP/issues"
+
+[project.scripts]
+scottylabs-mcp = "scottylabs_mcp.server:main"
+scottylabs-mcp-auth = "scottylabs_mcp.auth_helper:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/scottylabs_mcp"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/",
+    "tests/",
+    "scripts/",
+    "README.md",
+    "pyproject.toml",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "pytest-asyncio>=0.24",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
